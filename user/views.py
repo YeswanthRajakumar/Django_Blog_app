@@ -1,7 +1,10 @@
 from django.shortcuts import render, redirect
 
 # Pre-def form from django
-from django.contrib.auth.forms import UserCreationForm
+# from django.contrib.auth.forms import UserCreationForm
+
+# this is my custom form 
+from .forms import Custom_User_Form
 
 
 # Create your views here.
@@ -9,7 +12,8 @@ def register(request):
     #  POST request for posting the values
     if request.method == 'POST':
 
-        form = UserCreationForm(request.POST)
+        # form = UserCreationForm(request.POST)
+        form = Custom_User_Form(request.POST)
         if form.is_valid():
             form.save()
             # for getting values from the form
@@ -19,5 +23,6 @@ def register(request):
 
     # GET is for only viewing the form
     else:
-        form = UserCreationForm()
+        # form = UserCreationForm()
+        form = Custom_User_Form()
     return render(request, template_name='user/Register_form.html', context={'form': form})

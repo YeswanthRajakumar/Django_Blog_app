@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog',
     'user',
+    'crispy_forms'
 
 ]
 
@@ -122,3 +123,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'assets')
 ]
+
+# to set crispy_forms templates to bootstrap 4
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
