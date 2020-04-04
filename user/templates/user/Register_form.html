@@ -1,16 +1,17 @@
 {% extends 'blog/base.html' %}
-
+{% load crispy_forms_tags %}
     <title>Register</title>
 
 {% block content %}
-<h1>form</h1>
+<h2 class="modal-header" >Registration form </h2>
 
-    <div class="content-section">
+    <div class="container">
         <form action="" method="POST">
+
             {% csrf_token %}
 
             <fieldset class="form-group">
-                {{ form.as_p }}
+                {{ form | crispy }}
             </fieldset>
 
             <div class="form-group">

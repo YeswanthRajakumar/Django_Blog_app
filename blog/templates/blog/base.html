@@ -3,11 +3,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/docs.min.css' %}">
-    <script src="{% static 'js/docs.min.js' %}"></script>
 
 
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <title></title>
 
@@ -18,16 +19,32 @@
 </head>
 <body>
 
-<div class="nav_bar">
-    <ul>
-        <li><a href="#">Login</a></li>
-        <li><a href="{% url 'user-register' %}">Register</a></li>
-        <li><a href="{% url 'blog-about' %}">About</a></li>
-        <li><a href="{% url 'blog-home' %}">Home</a></li>
+<!-- Navigation bar starts -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href='{% url 'blog-home' %}'>Django Blogs</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item ">
+        <a class="nav-link" href="{% url 'blog-home' %}">Home </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'blog-about' %}">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="{% url 'user-register' %}">Signup</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link " href="#">Login</a>
+      </li>
     </ul>
-</div>
 
-
+  </div>
+</nav>
+<!-- End of Navigation bar section -->
 {% block content %}
 
 {% endblock %}
