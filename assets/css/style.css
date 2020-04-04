@@ -1,0 +1,19 @@
+.nav_bar{
+    background-color: #4f84db;
+}
+.nav_bar li {
+    color: white;
+    font-size: x-large;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: inline-flex;
+    text-decoration: none;
+    margin-left: 30px;
+    float: right;
+
+}
+
+
+.post-div{
+    background-color: #396df2;
+
+}

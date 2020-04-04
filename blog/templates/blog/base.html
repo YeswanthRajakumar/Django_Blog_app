@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/docs.min.css' %}">
+    <script src="{% static 'js/docs.min.js' %}"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <title></title>
+
+    {% block head %}
+
+    {% endblock %}
+
+</head>
+<body>
+
+<div class="nav_bar">
+    <ul>
+        <li><a href="#">Login</a></li>
+        <li><a href="{% url 'user-register' %}">Register</a></li>
+        <li><a href="{% url 'blog-about' %}">About</a></li>
+        <li><a href="{% url 'blog-home' %}">Home</a></li>
+    </ul>
+</div>
+
+
+{% block content %}
+
+{% endblock %}
+</body>
+</html>
