@@ -5,21 +5,21 @@
 {% block content %}
 
 
-    <div class="container ">
+    <div class="container">
         <form action="" method="POST">
 
             {% csrf_token %}
-            <legend> Create New account </legend>
+            <legend> Login Here </legend>
 
             <fieldset class="form-group">
                 {{ form | crispy }}
             </fieldset>
 
             <div class="form-group">
-                <button type="submit" class="btn btn-primary">Signup </button>
+                <button type="submit" class="btn btn-primary">Login</button>
             </div>
             <div>
-                <small>  Already have an account? <a href="{% url 'user-login' %}"> Login </a></small>
+                <small>  Need an account? <a href="{% url 'user-register' %}"> Sign up now </a></small>
             </div>
         </form>
     </div>

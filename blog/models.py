@@ -6,7 +6,10 @@ For one-to- many relationship
 --  One Author may have many posts
 --  Many Posts may have one  Author'''
 
+# for reversing of URL
 from django.contrib.auth.models import User
+
+from django.urls import reverse
 
 
 # Create your models her e.
@@ -16,9 +19,12 @@ class Post(models.Model):
     post_content = models.TextField(max_length=600)
     posted_time = models.DateTimeField(default=timezone.now())
     # if  author's account was deleted then delete his posts
-    author = models.ForeignKey(User,on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
 
-# This method returns title while we work on Terminal
+    # This method returns title while we work on Terminal
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('post-detail', kwargs={'pk': self.pk})

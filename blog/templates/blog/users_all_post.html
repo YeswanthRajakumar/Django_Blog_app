@@ -2,15 +2,16 @@
 
 
     {% block head %}
-        <title> Blog - Home</title>
+        <title> Blog - Users posts</title>
     {% endblock %}
 
 
 {% block content %}
 
-            {% for post in posts %}
+    <h2>Posted By {{ view.kwargs.username }}({{ page_obj.paginator.count }} posts)</h2>
 
-                <article class="media content-section  ">
+    {% for post in posts %}
+                <article class="media content-section">
                           <div class="media-body">
                                <img class="rounded-circle account-img" name="profile-pic" style="height: 150px;width: 150px" src="{{ post.author.profile.profile_pic.url }}" alt="profile_pic not available">
                             <div class="article-metadata">

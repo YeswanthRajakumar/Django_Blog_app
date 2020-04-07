@@ -1,0 +1,9 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+    <h2 class="modal-header" >Logged out </h2>
+     <div>
+         <small> <a href="{% url 'user-login' %}"> Login again </a></small>
+     </div>
+{% endblock %}
