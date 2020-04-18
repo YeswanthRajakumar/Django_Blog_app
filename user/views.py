@@ -37,6 +37,8 @@ def register(request):
     return render(request, template_name='user/Register_form.html', context={'form': form})
 
 
+
+
 @login_required
 def profile(request):
     # to check whether the request is POST  and checking if data is valid
